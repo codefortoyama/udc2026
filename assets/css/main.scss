@@ -1,0 +1,43 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minimal-mistakes/skins/default";
+@import "minimal-mistakes";
+
+/* 旧LPの雰囲気を少しだけ残す */
+.page__hero--overlay {
+  text-align: center;
+}
+
+/* 見出しにアクセント */
+.page__content h2 {
+  border-left: 8px solid #0ea5e9;
+  padding-left: 12px;
+}
+
+/* カード上部にアクセント線 */
+.feature__wrapper .archive__item {
+  border-top: 4px solid #0ea5e9;
+}
+
+/* ヒーローの導入文を中央に */
+.page__hero--overlay .page__lead {
+  font-size: 1.15em;
+  text-align: center;
+  text-wrap: balance;
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* フッターのコントラスト確保（テーマ既定だと4.5:1ギリギリのため） */
+.page__footer {
+  color: #595959;
+}
+.page__footer a {
+  color: #404040;
+}
+.page__footer-copyright a {
+  text-decoration: underline;
+}

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#E0F2FE"/><stop offset="0.5" stop-color="#DBEAFE"/><stop offset="1" stop-color="#EDE9FE"/>
+</linearGradient>
+<linearGradient id="btn" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#0F172A"/><stop offset="1" stop-color="#334155"/>
+</linearGradient>
+</defs>
+<rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+<!-- 立山連峰イメージ -->
+<path d="M0 480 L150 280 L260 400 L360 240 L470 420 L580 300 L700 440 L820 320 L930 430 L1040 300 L1200 460 L1200 630 L0 630 Z" fill="#FFFFFF" opacity="0.7"/>
+<path d="M0 500 L150 320 L260 430 L360 280 L470 450 L580 340 L700 470 L820 360 L930 460 L1040 340 L1200 490 L1200 630 L0 630 Z" fill="#0EA5E9" opacity="0.18"/>
+<!-- バッジ -->
+<rect x="60" y="48" width="460" height="52" rx="26" fill="#0F172A"/>
+<text x="290" y="82" font-size="26" text-anchor="middle" fill="white" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif">Code for Toyama × UDC2026</text>
+<!-- タイトル -->
+<text x="60" y="190" font-size="72" font-weight="800" fill="#0F172A" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif">じぶんたちで</text>
+<text x="60" y="280" font-size="72" font-weight="800" fill="#0F172A" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif">アプリをつくろう</text>
+<text x="60" y="340" font-size="48" font-weight="800" fill="#0284C7" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif">in 富山</text>
+<text x="62" y="390" font-size="26" fill="#334155" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif">身の回りの疑問・困りごとをアプリで解決 ／ はじめて歓迎</text>
+<!-- ボタン風 -->
+<rect x="60" y="430" width="280" height="64" rx="32" fill="url(#btn)"/>
+<text x="200" y="471" font-size="26" text-anchor="middle" fill="white" font-family="sans-serif">毎週もくもく</text>
+<rect x="360" y="430" width="280" height="64" rx="32" fill="white" stroke="#0F172A" stroke-width="3"/>
+<text x="500" y="471" font-size="26" text-anchor="middle" fill="#0F172A" font-family="sans-serif">月1ハンズオン</text>
+<!-- 右：スマホモック -->
+<g transform="translate(780,90)">
+<rect x="0" y="0" width="320" height="460" rx="36" fill="#0F172A"/>
+<rect x="14" y="14" width="292" height="432" rx="26" fill="white"/>
+<rect x="40" y="50" width="240" height="52" rx="12" fill="#F1F5F9"/>
+<text x="60" y="83" font-size="22" fill="#64748B">バス 何分待ち？</text>
+<rect x="40" y="120" width="240" height="52" rx="12" fill="#F1F5F9"/>
+<text x="60" y="153" font-size="22" fill="#64748B">ゴミの日 いつ？</text>
+<rect x="40" y="190" width="240" height="90" rx="12" fill="#0EA5E9"/>
+<text x="160" y="228" font-size="26" text-anchor="middle" fill="white">AIに頼んで作成</text>
+<text x="160" y="258" font-size="20" text-anchor="middle" fill="white">コード書かなくてOK</text>
+<circle cx="240" cy="350" r="52" fill="#F59E0B"/>
+<text x="240" y="368" font-size="28" text-anchor="middle" fill="white">公開！</text>
+</g>
+<text x="60" y="590" font-size="22" fill="#64748B" font-family="sans-serif">パソコンくわしくない → AIが手伝います ／ 見るだけOK</text>
+</svg>

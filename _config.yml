@@ -33,3 +33,9 @@ defaults:
 
 # Minimal Mistakes skin
 minimal_mistakes_skin: "default"
+
+# Google Analytics (GA4) — 全ページ共通
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-0SFK86LPGH"

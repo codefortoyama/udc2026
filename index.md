@@ -32,7 +32,7 @@ feature_row_style:
     btn_class: "btn--primary"
 ---
 
-Code for Toyama × UDC2026 富山ブロック。見るだけ・聞くだけもOKです。毎回はじめに初参加者向けの導入（#0）から始めるので、途中からでも大丈夫です。
+Code for Toyama × UDC 2026 富山県ブロック。見るだけ・聞くだけもOKです。毎回はじめに初参加者向けの導入（#0）から始めるので、途中からでも大丈夫です。
 
 ## 初めての人へ — 3ステップだけ {#first}
 
@@ -102,7 +102,7 @@ UDC＝アーバンデータチャレンジ（Urban Data Challenge）。全国で
 - 作品を出す締切: **2026/12/27**
 - 最終発表: **2027/2/20**（東京）
 
-出したい人だけ出せばOKです。詳しくは：[UDC2026作品募集（公式）](https://urbandata-challenge.jp/udc2026_entry)
+出したい人だけ出せばOKです。詳しくは：[UDC 2026 作品募集（公式）](https://urbandata-challenge.jp/udc2026_entry)
 
 ## よくある質問
 

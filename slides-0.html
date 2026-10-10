@@ -200,28 +200,43 @@ title: "導入（#0）スライド"
     <p class="lead">「アクセスを制限する設定」であり、完全な隔離ではありません。</p>
   </section>
 
-  <!-- 9. アプリを作る -->
+  <!-- 9. データを選ぶ -->
   <section>
-    <h2 class="slide-title">3. オープンデータでアプリを作ってみる</h2>
-    <p class="lead">配布されたCSV（例 gomi.csv）を作業フォルダに保存し、お願い文をそのまま貼って送るだけ。<strong>コードは書きません。</strong></p>
-    <div class="card" style="font-size:.72em;background:#0f172a;color:#e2e8f0;">
-      <p style="color:#e2e8f0;">富山のゴミの日を調べる1ページアプリを作って。<br>
-      index.html 1つだけ。難しくしないで。ボタンは大きく。日本語で。<br>
-      作業フォルダの gomi.csv を使って、市を選ぶボタン（富山市・高岡市）を付けて、曜日が出るようにして。<br>
-      分からない日程は勝手に作らず「市の公式ページで確認」と表示して。</p>
+    <h2 class="slide-title">3. 富山市のオープンデータを使う（①選ぶ・DL）</h2>
+    <div class="cards c3" style="font-size:.62em;">
+      <div class="card"><h3>① 無線LAN</h3><p>公衆無線LAN一覧（CSV / UTF-8）。Free Wi-Fiを探す。<strong>おすすめ</strong></p></div>
+      <div class="card"><h3>② 福祉避難所</h3><p>福祉避難所（CSV / Shift-JIS）。名前・住所で探す</p></div>
+      <div class="card"><h3>③ 人口</h3><p>地域・年齢別人口（CSV / Shift-JIS）。地域ごとの人口を見る</p></div>
     </div>
-    <p class="lead">（コースは3つ。避難所リスト／遊び場マップもあります）</p>
+    <p style="font-size:.78em;margin-top:.4em;">1つ選んで、<strong>公式ページ</strong>（富山市オープンデータ）から<strong>CSVをダウンロード</strong>し、作業フォルダ <span class="kbd">my-first-app</span> に移します。</p>
+    <p class="lead">文字化けしたら、AIに「UTF-8に変換して読んで」と頼みます。</p>
+  </section>
+
+  <!-- 10. お願い文 -->
+  <section>
+    <h2 class="slide-title">3. AIに頼む（お願い文）</h2>
+    <div class="card" style="font-size:.6em;background:#0f172a;color:#e2e8f0;">
+      <p style="color:#e2e8f0;">作業フォルダの 〇〇.csv を使って、1ページのアプリを作って。<br>
+      まず、このCSVの列名と中身を確認して、どんな簡単な機能が作れるか提案して。<br>
+      提案にOKを出したら、次を守って作って：<br>
+      ・index.html 1つだけで動く（ダブルクリックで開ける）<br>
+      ・データはHTMLの中に埋め込む（実行時にCSVを読まない・サーバーを立てない）<br>
+      ・データにない情報は作らない<br>
+      ・画面に出典（富山市オープンデータ／CC BY）と取得日を表示する<br>
+      ・難しくしない。ボタンは大きく。日本語で。</p>
+    </div>
+    <p class="lead">ポイント：データは<strong>自分でDLしたファイル</strong>を使う。AIに探させない。</p>
   </section>
 
   <!-- 10. 動かして見る -->
   <section>
-    <h2 class="slide-title">3. 動かして見る・直す</h2>
+    <h2 class="slide-title">3. 動かして見る・元データと照合</h2>
     <div class="cards c2" style="align-items:center;">
       <div>
         <ul style="font-size:.82em;">
           <li><span class="kbd">index.html</span> をダブルクリック → ブラウザで見る</li>
-          <li>思ったとおりでなければ、日本語で頼むだけ</li>
-          <li>「<strong>ボタンが動かない。直して。</strong>」「<strong>スマホで見やすくして。</strong>」</li>
+          <li>画面の<strong>3件を元のCSVと見比べる</strong>（名前・住所が合っているか）</li>
+          <li>違えば、日本語で頼むだけ（「ボタンが動かない。直して」）</li>
         </ul>
       </div>
       <div>
@@ -231,13 +246,13 @@ title: "導入（#0）スライド"
           <circle cx="48" cy="42" r="6" fill="#f87171"/>
           <circle cx="68" cy="42" r="6" fill="#fbbf24"/>
           <circle cx="88" cy="42" r="6" fill="#34d399"/>
-          <text x="220" y="108" text-anchor="middle" font-size="22" font-weight="800" fill="#0b3d6b">富山のゴミの日</text>
+          <text x="220" y="108" text-anchor="middle" font-size="22" font-weight="800" fill="#0b3d6b">富山市 公衆無線LAN</text>
           <rect x="70" y="124" width="130" height="46" rx="23" fill="#0ea5e9"/>
-          <text x="135" y="153" text-anchor="middle" font-size="18" fill="#fff">富山市</text>
+          <text x="135" y="153" text-anchor="middle" font-size="18" fill="#fff">駅前</text>
           <rect x="220" y="124" width="150" height="46" rx="23" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
-          <text x="295" y="153" text-anchor="middle" font-size="18" fill="#0b3d6b">高岡市</text>
+          <text x="295" y="153" text-anchor="middle" font-size="18" fill="#0b3d6b">図書館</text>
           <rect x="70" y="188" width="300" height="52" rx="12" fill="#f1f5f9"/>
-          <text x="90" y="220" font-size="16" fill="#334155">燃えるゴミ：火・金</text>
+          <text x="90" y="220" font-size="16" fill="#334155">旧馬場家住宅／東岩瀬町</text>
         </svg>
       </div>
     </div>

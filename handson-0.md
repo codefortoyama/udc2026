@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "導入（#0） OpenCode Desktopを入れてアプリを作ろう（90分）"
+title: "導入（#0） AI開発をやってみよう（90分）"
 permalink: /handson-0/
 ---
 対象：初参加・パソコンくわしくない人。毎回のはじめに開催。Windowsパソコン前提。

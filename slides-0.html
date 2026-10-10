@@ -206,7 +206,7 @@ title: "導入（#0）スライド"
     <div class="cards c3" style="font-size:.62em;">
       <div class="card"><h3>① 無線LAN</h3><p>公衆無線LAN一覧（CSV / UTF-8）。Free Wi-Fiを探す。<strong>おすすめ</strong></p></div>
       <div class="card"><h3>② 福祉避難所</h3><p>福祉避難所（CSV / Shift-JIS）。名前・住所で探す</p></div>
-      <div class="card"><h3>③ 人口</h3><p>地域・年齢別人口（CSV / Shift-JIS）。地域ごとの人口を見る</p></div>
+      <div class="card"><h3>③ 人口</h3><p>地域・年齢別人口（2018年10月1日時点／CSV・Shift-JIS）。地域ごとの人口を見る</p></div>
     </div>
     <p style="font-size:.78em;margin-top:.4em;">1つ選んで、<strong>公式ページ</strong>（富山市オープンデータ）から<strong>CSVをダウンロード</strong>し、作業フォルダ <span class="kbd">my-first-app</span> に移します。</p>
     <p class="lead">文字化けしたら、AIに「UTF-8に変換して読んで」と頼みます。</p>
@@ -222,7 +222,7 @@ title: "導入（#0）スライド"
       ・index.html 1つだけで動く（ダブルクリックで開ける）<br>
       ・データはHTMLの中に埋め込む（実行時にCSVを読まない・サーバーを立てない）<br>
       ・データにない情報は作らない<br>
-      ・画面に出典（富山市オープンデータ／CC BY）と取得日を表示する<br>
+      ・画面に出典（富山市オープンデータ／CC BY）・取得日・データの基準日（例：人口は2018年10月1日時点）を表示する<br>
       ・難しくしない。ボタンは大きく。日本語で。</p>
     </div>
     <p class="lead">ポイント：データは<strong>自分でDLしたファイル</strong>を使う。AIに探させない。</p>
@@ -235,7 +235,7 @@ title: "導入（#0）スライド"
       <div>
         <ul style="font-size:.82em;">
           <li><span class="kbd">index.html</span> をダブルクリック → ブラウザで見る</li>
-          <li>画面の<strong>3件を元のCSVと見比べる</strong>（名前・住所が合っているか）</li>
+          <li>画面の<strong>3件を元のCSVと見比べる</strong>（施設は名前・住所、人口は地域名・人数）</li>
           <li>違えば、日本語で頼むだけ（「ボタンが動かない。直して」）</li>
         </ul>
       </div>

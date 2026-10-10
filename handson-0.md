@@ -6,6 +6,16 @@ permalink: /handson-0/
 対象：初参加・パソコンくわしくない人。毎回のはじめに開催。Windowsパソコン前提。
 事前準備なしでOKです。当日一緒に入れます。
 
+## スライド（当日の説明用）
+
+当日はこのスライドで説明します。下でそのまま見られます（←→キーで進みます）。
+
+<div class="embed-16x9">
+  <iframe src="{{ '/slides-0/' | relative_url }}" title="導入（#0）のスライド" loading="lazy"></iframe>
+</div>
+
+[別画面でスライドを開く]({{ "/slides-0/" | relative_url }}){: .btn .btn--primary }
+
 ## ゴール
 
 帰るまでにこの3つを達成する。

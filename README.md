@@ -17,8 +17,10 @@ bundle exec jekyll serve --livereload
 - `index.md`（splashレイアウトのLP本体）
 - `connpass.md` → `/connpass/`
 - `handson-0.md` → `/handson-0/`、`mentor-0.md` → `/mentor-0/`
+- `slides-0.html` → `/slides-0/`（Reveal.jsの#0スライド。`_layouts/bare.html` を使用）
 - `_config.yml`（Minimal Mistakes設定、`remote_theme: mmistakes/minimal-mistakes@4.24.0`）
 - `assets/hero.svg`（ヒーロー背景）、`assets/eyecatch.svg`（OGP兼アイキャッチ）、`assets/favicon.svg`
+- `assets/reveal/`（Reveal.js 5.1.0のローカル配布。CDNに依存せずオフラインでも動作）
 - `assets/css/main.scss`（テーマ読み込み＋モダンな見た目・レイアウト・配色の上書き）
 - `_includes/head/custom.html`（favicon・タスクリストのチェックボックスに読み上げラベル付与）
 - `Gemfile`（ローカル確認用、Windows対応でtzinfo-data/wdm/webrick等を含む）

@@ -16,7 +16,7 @@ permalink: /mentor-0/
 ## 方針（旧版からの変更）
 
 - 今回は**OpenCode Desktop（GUIアプリ）**を使う。WSL/Ubuntu/ターミナルは使わない。
-- 安全設定はプロジェクト直下の `opencode.jsonc` に置く（`external_directory: * → deny` が要）。
+- 安全設定は**全プロジェクト共通**で `C:\Users\<名前>\.config\opencode\opencode.jsonc` に置く（`external_directory: * → deny` が要）。プロジェクト単位で変えたいときだけ、その直下に置く（プロジェクト側が優先）。
 - 旧 `setup-opencode-wsl.ps1`（WSL手順）は今回使わない。
 
 ## 事前準備（前日まで）
@@ -37,7 +37,7 @@ permalink: /mentor-0/
 
 ## 設定ファイル雛形（全員に配る）
 
-プロジェクトフォルダの直下（例: `ドキュメント\my-first-app\opencode.jsonc`）に置く。フォルダはOpenCode Desktopの「プロジェクトを追加 / フォルダを開く」で作って開くと早い。
+**既定は「全プロジェクト共通」**：`C:\Users\<名前>\.config\opencode\opencode.jsonc` に置く。これでどのプロジェクトでも効く。プロジェクト単位で変えたいときだけ、そのフォルダ直下に置く（プロジェクト側が優先）。
 
 ```json
 {
@@ -58,7 +58,7 @@ permalink: /mentor-0/
 ```
 
 - `~` はWindowsでは `C:\Users\<名前>` を指す（home展開される。パスは `\` でも `/` でも可）。
-- 全プロジェクト共通にしたい上級者は `C:\Users\<名前>\.config\opencode\opencode.jsonc` に置く（任意・個別対応）。
+- 既定は全プロジェクト共通（グローバル設定 `~/.config/opencode/opencode.jsonc`）。プロジェクト単位で変えたいときはそのフォルダ直下に置く（プロジェクトが優先）。
 - OpenCode自身の作業用フォルダ（一時領域・設定・ツール出力）は引き続き使えるので、`external_directory:* deny` でも通常動作は壊れない。
 - 配布する雛形は**コメント無しの純粋なJSON**として配る（`//` を足さない）。JSONC非対応のツールで読ませても壊れないように。
 
@@ -73,7 +73,7 @@ permalink: /mentor-0/
 
 ## セキュリティチェック（必ず確認）
 
-- [ ] プロジェクトフォルダ直下の `opencode.jsonc` が存在し、`external_directory → deny` がある
+- [ ] グローバル設定 `C:\Users\<名前>\.config\opencode\opencode.jsonc` が存在し、`external_directory → deny` がある
 - [ ] 設定反映のため、アプリ/セッションを再起動済み
 - [ ] 外部フォルダ拒否テストで断られる
 - [ ] 参加者に「許可」を毎回読ませる。「常に許可」は安易に押させない
@@ -101,7 +101,7 @@ permalink: /mentor-0/
 4. **`opencode.jsonc` が作れない・効かない**
    - **拡張子の隠蔽が最頻出**：実際は `opencode.jsonc.txt` になっている。エクスプローラーの「表示 → ファイル名拡張子」にチェックを入れて確認させる
    - JSONのカンマ抜けに注意（コメント無しの雛形をそのまま配る）
-   - 置いた後はアプリを再起動。効かないときは場所（直下か）を確認
+   - 置いた後はアプリを再起動。効かないときは場所（`~/.config/opencode`）と、プロジェクト側 `opencode.jsonc` が上書きしていないかを確認
 5. **アプリが動かない（ボタン無反応・真っ白）**
    - 追加プロンプト：「ボタンが動かない。直して」「スマホで見やすくして」
    - ダメなら予備の完成index.htmlを渡す。`index.html` のダブルクリックで開けることを確認

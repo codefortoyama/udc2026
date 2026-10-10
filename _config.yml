@@ -14,7 +14,7 @@ sass:
 
 locale: "ja"
 timezone: "Asia/Tokyo"
-title: "とやま市民開発部"
+title: "とやま市民IT開発部"
 subtitle: "UDC 2026 富山県ブロック / Code for Toyama"
 description: "じぶんたちでアプリをつくろう in 富山。身の回りの疑問・困りごとをアプリで解決。はじめて歓迎。市民開発者を増やす集まり。"
 # 公開先: https://codefortoyama.github.io/udc2026/

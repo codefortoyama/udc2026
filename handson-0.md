@@ -2,6 +2,10 @@
 layout: single
 title: "導入（#0） AI開発をやってみよう（90分）"
 permalink: /handson-0/
+header:
+  image: /assets/eyecatch-0.svg
+  og_image: /assets/eyecatch-0.svg
+  teaser: /assets/eyecatch-0.svg
 ---
 対象：初参加・パソコンくわしくない人。毎回のはじめに開催。Windowsパソコン前提。
 事前準備なしでOKです。当日一緒に入れます。

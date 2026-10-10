@@ -16,13 +16,14 @@ bundle exec jekyll serve --livereload
 ## 構成
 - `index.md`（splashレイアウトのLP本体）
 - `connpass.md` → `/connpass/`
-- `handson-0.md` → `/handson-0/`
+- `handson-0.md` → `/handson-0/`、`mentor-0.md` → `/mentor-0/`
 - `_config.yml`（Minimal Mistakes設定、`remote_theme: mmistakes/minimal-mistakes@4.24.0`）
-- `assets/eyecatch.svg`（アイキャッチ兼OGP）、`assets/favicon.svg`
-- `assets/css/main.scss`（テーマ読み込み＋最小限の上書き）
-- `_includes/head/custom.html`（favicon読み込み）
+- `assets/hero.svg`（ヒーロー背景）、`assets/eyecatch.svg`（OGP兼アイキャッチ）、`assets/favicon.svg`
+- `assets/css/main.scss`（テーマ読み込み＋モダンな見た目・レイアウト・配色の上書き）
+- `_includes/head/custom.html`（favicon・タスクリストのチェックボックスに読み上げラベル付与）
 - `Gemfile`（ローカル確認用、Windows対応でtzinfo-data/wdm/webrick等を含む）
 
-## アクセシビリティ
-axe-coreで全3ページのcolor-contrast違反0を確認済み（`C:\Users\tomin\AppData\Local\Temp\opencode\a11y\audit.js`）。
-背景画像上の見出しはaxeが自動判定できないため、実ピクセル測定（measure.js）で白文字15.71:1を確認。
+## アクセシビリティ・検証
+- axe-core（WCAG 2.0/2.1 A・AA）で全4ページ違反0を確認。
+- モバイル390px／デスクトップ1280pxで横スクロール（はみ出し）なしを確認。
+- 検証はPuppeteer（Chrome）で実施。手元での再現手順は調査スクリプト群を参照。

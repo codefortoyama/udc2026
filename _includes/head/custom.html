@@ -1,2 +1,30 @@
 <!-- custom head: favicon -->
 <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+
+<!-- custom head: FontAwesome(CDN)への事前接続で読み込みを少し速く -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- custom head: 補助スクリプト（アクセシビリティの微調整） -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // 1) タスクリストのチェックボックスに読み上げ用ラベルを付与
+    document
+      .querySelectorAll('.task-list-item > input[type="checkbox"]')
+      .forEach(function (cb) {
+        if (cb.getAttribute("aria-label")) return;
+        var li = cb.closest("li");
+        var text = li ? li.textContent.trim().replace(/\s+/g, " ") : "";
+        cb.setAttribute("aria-label", text.slice(0, 120) || "チェック項目");
+        cb.setAttribute("aria-hidden", "false");
+      });
+
+    // 2) 目次タイトル（テーマはh4固定）をh2へ上げ、見出しレベルの飛びを解消
+    var tocTitle = document.querySelector(".toc .nav__title");
+    if (tocTitle && tocTitle.tagName === "H4") {
+      var h2 = document.createElement("h2");
+      h2.className = tocTitle.className;
+      h2.innerHTML = tocTitle.innerHTML;
+      tocTitle.parentNode.replaceChild(h2, tocTitle);
+    }
+  });
+</script>

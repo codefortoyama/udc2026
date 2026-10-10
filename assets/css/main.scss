@@ -3,41 +3,328 @@
 ---
 
 @import "minimal-mistakes/skins/default";
+
+/* テーマ本体の配色（Sass変数で上書き） */
+$primary-color: #0b3d6b;
+$link-color: #0b6bb3;
+
 @import "minimal-mistakes";
 
-/* 旧LPの雰囲気を少しだけ残す */
+/* =========================================================
+   UDC2026 富山 LP — モダンリフレッシュ
+   （デザイントークン）
+   ========================================================= */
+:root {
+  --u-ink: #0f172a;
+  --u-ink-2: #46536b;
+  --u-brand: #0b3d6b;
+  --u-brand-2: #0ea5e9;
+  --u-accent: #f59e0b;
+  --u-bg: #f5f8fc;
+  --u-card: #ffffff;
+  --u-line: #e4ecf5;
+  --u-r: 18px;
+  --u-r-sm: 12px;
+  --u-shadow: 0 1px 2px rgba(15, 23, 42, .05), 0 10px 24px rgba(15, 23, 42, .06);
+  --u-shadow-h: 0 6px 14px rgba(15, 23, 42, .09), 0 20px 44px rgba(15, 23, 42, .13);
+  --u-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP",
+    "Yu Gothic UI", "Meiryo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --u-maxw: 1240px;
+}
+
+/* ---------------- ベース ---------------- */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--u-font);
+  color: var(--u-ink);
+  background-color: var(--u-bg);
+  line-height: 1.85;
+  letter-spacing: .01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.page__content { line-height: 1.9; }
+.page__content p,
+.page__content li { color: var(--u-ink); }
+
+/* ---------------- ヘッダー（マストヘッド） ---------------- */
+.masthead {
+  background: rgba(255, 255, 255, .82);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--u-line);
+}
+.masthead__inner-wrap { max-width: var(--u-maxw); }
+.site-title {
+  font-weight: 800;
+  letter-spacing: .01em;
+  color: var(--u-ink);
+}
+.greedy-nav { background: transparent; }
+.greedy-nav a { color: var(--u-ink); }
+.greedy-nav a:hover { color: var(--u-brand-2); }
+
+/* ---------------- ヒーロー ---------------- */
 .page__hero--overlay {
+  position: relative;
+  padding: 6rem 0 5.5rem;
   text-align: center;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
 }
-
-/* 見出しにアクセント */
-.page__content h2 {
-  border-left: 8px solid #0ea5e9;
-  padding-left: 12px;
+.page__hero--overlay::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 5rem;
+  background: linear-gradient(to bottom, rgba(245, 248, 252, 0), var(--u-bg));
+  pointer-events: none;
 }
-
-/* カード上部にアクセント線 */
-.feature__wrapper .archive__item {
-  border-top: 4px solid #0ea5e9;
+.page__hero--overlay .wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: var(--u-maxw);
 }
-
-/* ヒーローの導入文を中央に */
-.page__hero--overlay .page__lead {
-  font-size: 1.15em;
-  text-align: center;
+.page__hero--overlay .page__title {
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.28;
+  letter-spacing: .02em;
+  font-size: clamp(1.75rem, 4.6vw, 3.05rem);
   text-wrap: balance;
-  max-width: 44rem;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, .38);
+}
+.page__hero--overlay .page__lead {
+  color: rgba(255, 255, 255, .94);
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  max-width: 46rem;
+  margin: 1.05rem auto 0;
+  text-wrap: balance;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, .34);
+}
+.page__hero--overlay .wrapper > p:last-child {
+  margin: .4rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  justify-content: center;
+}
+.page__hero--overlay .wrapper > p:last-child .btn { margin: 0; }
+
+/* ---------------- ボタン ---------------- */
+.btn {
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  padding: .72em 1.55em;
+  border-width: 1.5px;
+  transition: transform .16s ease, box-shadow .22s ease,
+    background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn--large { font-size: 1rem; }
+.btn--primary {
+  background-image: linear-gradient(135deg, #0b6bb3, #0ea5e9);
+  border: 0;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(14, 165, 233, .34);
+}
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(14, 165, 233, .46);
+  color: #fff;
+}
+.btn--light-outline {
+  border-color: rgba(255, 255, 255, .85);
+  color: #fff;
+  background: rgba(255, 255, 255, .08);
+}
+.btn--light-outline:hover {
+  background: #fff;
+  color: var(--u-brand);
+  transform: translateY(-2px);
+}
+.btn:focus-visible {
+  outline: 3px solid rgba(14, 165, 233, .6);
+  outline-offset: 2px;
+}
+
+/* ---------------- 見出し ---------------- */
+.page__content h2 {
+  border: 0;
+  border-bottom: 0;
+  padding: 0 0 0 1rem;
+  margin-top: 2.8rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+  position: relative;
+}
+.page__content h2::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .16em; bottom: .16em;
+  width: .42rem;
+  border-radius: 999px;
+  background-image: linear-gradient(180deg, #0ea5e9, #0b6bb3);
+}
+.page__content h3 {
+  margin-top: 1.9rem;
+  font-weight: 700;
+}
+.page__content h3::before {
+  content: "";
+  display: inline-block;
+  width: .55em; height: .55em;
+  margin-right: .5em;
+  border-radius: 3px;
+  background-image: linear-gradient(135deg, #0ea5e9, #0b6bb3);
+  transform: translateY(-.05em);
+}
+
+/* ---------------- カード（feature_row） ---------------- */
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  border-bottom: 0;
+  margin-bottom: 2.2rem;
+}
+.feature__wrapper::after { display: none; content: none; }
+.feature__item {
+  float: none;
+  width: auto;
+  margin: 0;
+  background: var(--u-card);
+  border: 1px solid var(--u-line);
+  border-radius: var(--u-r);
+  box-shadow: var(--u-shadow);
+  padding: 1.5rem 1.5rem 1.3rem;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .22s ease;
+}
+.feature__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--u-shadow-h);
+}
+.feature__item .archive__item-title {
+  margin: 0 0 .5rem;
+  font-weight: 800;
+  font-size: 1.12rem;
+  line-height: 1.5;
+}
+.feature__item .archive__item-excerpt {
+  margin: 0;
+  color: var(--u-ink-2);
+  font-size: .96rem;
+}
+.feature__item .btn { margin-top: .9rem; }
+
+/* ---------------- 注意枠（notice） ---------------- */
+.notice {
+  border: 1px solid var(--u-line);
+  border-radius: var(--u-r-sm);
+  box-shadow: var(--u-shadow);
+  padding: 1.1rem 1.3rem;
+}
+.notice--warning { border-left: 6px solid var(--u-accent); background: #fffaf1; }
+.notice--primary { border-left: 6px solid var(--u-brand-2); background: #f1f9ff; }
+.notice--info { border-left: 6px solid #6366f1; background: #f5f5ff; }
+.notice--success { border-left: 6px solid #10b981; background: #f0fdf8; }
+.notice--danger { border-left: 6px solid #ef4444; background: #fff5f5; }
+
+/* ---------------- 本文リンク ---------------- */
+.page__content a:not(.btn) {
+  color: #0b6bb3;
+  text-decoration: underline;
+  text-decoration-color: rgba(14, 165, 233, .42);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: .18em;
+}
+.page__content a:not(.btn):hover {
+  color: #084d82;
+  text-decoration-color: #0ea5e9;
+}
+
+/* ---------------- 表・コード ---------------- */
+.page__content table {
+  display: table;
+  width: 100%;
+  border: 1px solid var(--u-line);
+  border-radius: var(--u-r-sm);
+  overflow: hidden;
+  box-shadow: var(--u-shadow);
+}
+.page__content th { background: #eef6fd; color: var(--u-brand); }
+.page__content tr:nth-child(even) { background: #fafcff; }
+.page__content code {
+  border-radius: 6px;
+  background: #eef4fb;
+  color: #0b3d6b;
+  overflow-wrap: anywhere;
+}
+/* コードブロックはテーマのダーク配色を保ち、折り返して横スクロールを無くす */
+.page__content .highlight code,
+.page__content pre > code {
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
+}
+.page__content .highlight pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ---------------- 目次（toc） ---------------- */
+.toc {
+  border: 1px solid var(--u-line);
+  border-radius: var(--u-r-sm);
+  background: #fff;
+  box-shadow: var(--u-shadow);
+  padding: .8rem 1rem;
+}
+.toc .nav__title { color: var(--u-brand); }
+
+/* ---------------- フッター ---------------- */
+.page__footer {
+  background: #08213c;
+  color: #c7d4e4;
+  margin-top: 3rem;
+}
+.page__footer a { color: #e2ecf7; }
+.page__footer a:hover { color: #ffffff; }
+.page__footer-follow .social-icons a { color: #dbe7f5; }
+.page__footer-copyright { color: #aebfd2; }
+.page__footer-copyright a { color: #dbe7f5; text-decoration: underline; }
+
+/* ---------------- レイアウト幅（本文を広く使う） ---------------- */
+#main {
+  max-width: var(--u-maxw);
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 64em) {
+  /* 既定は本文が右寄せで左に大きな余白ができるため、左詰めにして幅を使う */
+  .page {
+    float: none;
+    width: 100%;
+  }
+}
+.page__footer footer {
+  max-width: var(--u-maxw);
+}
 
-/* フッターのコントラスト確保（テーマ既定だと4.5:1ギリギリのため） */
-.page__footer {
-  color: #595959;
+/* ---------------- レスポンシブ ---------------- */
+@media (max-width: 640px) {
+  .page__hero--overlay { padding: 4.2rem 0 3.6rem; }
+  .page__content h2 { margin-top: 2.1rem; }
 }
-.page__footer a {
-  color: #404040;
+
+@media (max-width: 480px) {
+  .page__hero--overlay .wrapper > p:last-child { flex-direction: column; align-items: stretch; }
+  .page__hero--overlay .wrapper > p:last-child .btn { width: 100%; }
 }
-.page__footer-copyright a {
-  text-decoration: underline;
+
+/* 印刷・アニメーション配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .feature__item { transition: none; }
 }

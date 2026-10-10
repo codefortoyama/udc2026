@@ -8,6 +8,10 @@ plugins:
   - jekyll-feed
   - jemoji
 
+# CSSは圧縮して配信（GitHub Pagesでも有効）
+sass:
+  style: compressed
+
 locale: "ja"
 timezone: "Asia/Tokyo"
 title: "じぶんたちでアプリをつくろう in 富山"

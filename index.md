@@ -3,9 +3,10 @@ layout: splash
 title: "じぶんたちでアプリをつくろう in 富山"
 excerpt: "身の回りの疑問・困りごとをアプリで解決。はじめて歓迎。毎週オンライン＋月1回対面。"
 header:
-  overlay_color: "#0b3d6b"
-  overlay_filter: rgba(11, 61, 107, 0.8)
-  overlay_image: /assets/eyecatch.svg
+  og_image: /assets/eyecatch.svg
+  overlay_color: "#08213c"
+  overlay_filter: rgba(8, 33, 60, 0.5)
+  overlay_image: /assets/hero.svg
   actions:
     - label: "初めての人はこちら"
       url: "#first"
@@ -58,7 +59,7 @@ Code for Toyama × UDC2026 富山ブロック。見るだけ・聞くだけもOK
 
 {% include feature_row id="feature_row_style" %}
 
-1. **導入（#0） AI助手をパソコンに入れよう** ※毎回開催 — パソコンにAI助手（OpenCode）を入れて、簡単なアプリを1つ作ります。
+1. **導入（#0） AI助手をパソコンに入れよう** ※毎回開催 — WindowsにAI助手アプリ（OpenCode Desktop）を入れて、作業フォルダの外を触れないよう設定し、オープンデータを使った小さなアプリを1つ作ります。
 2. **#1 疑問・困りごと持ち寄り** — みんなの「困った」を集めて、何を作るか決めます。
 3. **#2 はじめての公開** — 作ったものをインターネットに載せて、スマホで見ます。
 4. **#3 AIとデータで深掘り** — 富山のデータとAIを組み合わせて、もう一歩よくします。
@@ -71,7 +72,7 @@ Code for Toyama × UDC2026 富山ブロック。見るだけ・聞くだけもOK
 
 当日説明します。事前に調べなくて大丈夫です。
 
-- **パソコン：** Windows。AI助手のアプリ（OpenCode）を使います。
+- **パソコン：** Windows。AI助手のアプリ（OpenCode Desktop）を使います。
 - **AI：** 無料のものを使います（種類はその都度変わります。例：Big Pickle）。選ぶのはお手伝いします。
 - **公開場所：** 無料でホームページを載せられる場所（GitHub Pages）を使います。ボタンを押すだけで載ります。
 - **上級者向け：** 別の方法（Docker）もあります。希望者のみでOKです。
@@ -111,9 +112,9 @@ UDC＝アーバンデータチャレンジ（Urban Data Challenge）。全国で
 
 ## 参加方法
 
-持ち物：Windowsのパソコン（見学だけならスマホでもOK）。事前準備がなくても大丈夫です。
+持ち物：Windowsのパソコン（見学だけならスマホでもOK）。事前準備がなくても大丈夫です。個人用PC推奨（管理者権限のない会社支給PCではできない場合があります）。
 
-AI助手のアプリ（OpenCode）は、事前に入れてくるとスムーズです。入れられなくても大丈夫です。当日最初の導入の時間に、一緒に入れます。
+AI助手アプリ（OpenCode Desktop）は、事前に入れてくるとスムーズです。入れられなくても大丈夫です。当日最初の導入の時間に、一緒に入れます。
 
 - 申込: [Code for Toyama connpass](https://codefortoyama.connpass.com/)
 - 連絡: Code for Toyama（codefortoyama@gmail.com）

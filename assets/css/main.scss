@@ -264,9 +264,11 @@ body {
 .page__content table.schedule th:nth-child(1),
 .page__content table.schedule td:nth-child(1) { width: 3.5rem; white-space: nowrap; }
 .page__content table.schedule th:nth-child(2),
-.page__content table.schedule td:nth-child(2) { width: 32%; }
+.page__content table.schedule td:nth-child(2) { width: 24%; }
 .page__content table.schedule th:nth-child(3),
-.page__content table.schedule td:nth-child(3) { width: 22%; }
+.page__content table.schedule td:nth-child(3) { width: 28%; }
+.page__content table.schedule th:nth-child(4),
+.page__content table.schedule td:nth-child(4) { width: 12%; }
 .page__content code {
   border-radius: 6px;
   background: #eef4fb;

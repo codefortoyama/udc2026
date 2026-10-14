@@ -52,6 +52,12 @@ title: "導入（#0）スライド"
   .reveal .badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(125,211,252,.6);color:#e0f2fe;border-radius:999px;padding:.2em .9em;font-size:.56em;letter-spacing:.1em;margin-bottom:.4em;}
   .reveal .kicker{font-size:.6em;letter-spacing:.16em;color:var(--u-sky);font-weight:800;text-transform:uppercase;}
   .reveal .hint{color:#94a3b8;font-size:.6em;}
+  .reveal table.cmp{width:100%;border-collapse:collapse;font-size:.6em;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(15,23,42,.08);}
+  .reveal table.cmp th,.reveal table.cmp td{border:none;border-bottom:1px solid var(--u-line);padding:.42em .7em;text-align:left;vertical-align:top;line-height:1.4;}
+  .reveal table.cmp th{background:var(--u-brand);color:#fff;font-weight:800;}
+  .reveal table.cmp td:first-child{font-weight:800;color:var(--u-brand);white-space:nowrap;}
+  .reveal table.cmp tr.hl td{background:#f0f9ff;}
+  .reveal .src{font-size:.42em;color:#94a3b8;margin-top:.5em;}
 </style>
 </head>
 <body>
@@ -286,6 +292,81 @@ title: "導入（#0）スライド"
       <li><strong>コードが書けなくても、日本語で頼めば作れる</strong></li>
     </ul>
     <p class="lead center" style="margin-top:.5em;">①入れる ②守る ③作る ができれば、今日は大成功です。</p>
+  </section>
+
+  <!-- おまけ1. 代表的なAIモデル -->
+  <section>
+    <h2 class="slide-title">おまけ① 代表的なAIモデル</h2>
+    <table class="cmp">
+      <thead><tr><th>系統</th><th>会社</th><th>代表モデル</th><th>特徴</th></tr></thead>
+      <tbody>
+        <tr><td>GPT系</td><td>OpenAI（米）</td><td>GPT-6 Astra ／ GPT-6 Sol</td><td>ChatGPTの中身。何でもこなす万能型。Astraは最上位</td></tr>
+        <tr><td>Claude系</td><td>Anthropic（米）</td><td>Claude Fable 5.1 ／ Opus 5.5 ／ Sonnet 5.5 ／ Haiku 5.5</td><td>プログラミングや長い作業が得意。大きさ違いで選べる</td></tr>
+        <tr><td>Gemini系</td><td>Google（米）</td><td>Gemini 4 Argon ／ Gemini 3.8 Flash</td><td>画像・動画など文字以外も得意。Googleのサービスと連携</td></tr>
+        <tr><td>DeepSeek系</td><td>DeepSeek（中）</td><td>DeepSeek V4-Pro ／ V4.1-Flash</td><td>安い。AIの本体（モデル）が公開されていて、自分のサーバーでも動かせる</td></tr>
+        <tr><td>Muse系</td><td>Meta（米）</td><td>Muse Spark</td><td>Llamaの後継。Meta AI（Instagram・WhatsApp等）の中身</td></tr>
+      </tbody>
+    </table>
+    <p class="lead" style="margin-top:.6em;">今日使った<strong>無料のAI</strong>も、こうしたモデルの仲間です。目的と予算で選びます。</p>
+    <p class="src">2026年10月時点。名前や順位はすぐ変わります。</p>
+  </section>
+
+  <!-- おまけ2. 代表的なAIエージェント -->
+  <section>
+    <h2 class="slide-title">おまけ② 代表的なAIエージェント</h2>
+    <table class="cmp" style="font-size:.56em;">
+      <thead><tr><th>名前</th><th>会社</th><th>どんなもの？</th><th>使えるAI</th><th>料金</th></tr></thead>
+      <tbody>
+        <tr><td>Codex</td><td>OpenAI</td><td>プログラミング用。アプリ・ターミナル・クラウドで動く</td><td>GPT系</td><td>ChatGPTの有料プラン</td></tr>
+        <tr><td>Claude Code</td><td>Anthropic</td><td>プログラミング用。アプリ・ターミナル・Webで動く</td><td>Claude系</td><td>Claudeの有料プラン</td></tr>
+        <tr class="hl"><td>OpenCode</td><td>Anomaly</td><td><strong>今日使ったもの</strong>。プログラミング用。オープンソース</td><td>いろいろ選べる</td><td>アプリは無料。AIの利用料は別（無料のAIあり／自分の契約をつなぐ／月10ドルのOpenCode Go）</td></tr>
+        <tr><td>dots</td><td>OpenAI</td><td>いつも動いている個人秘書。予定調整や調べもの。開発はCodexに任せる</td><td>GPT系</td><td>ChatGPTの上位プラン</td></tr>
+        <tr><td>Hermes Agent</td><td>Nous Research</td><td>記憶を持ち続ける個人用。チャットアプリからも使える。オープンソース</td><td>いろいろ選べる</td><td>ソフトは無料。AIの利用料は別（使うAIの会社に払う）</td></tr>
+      </tbody>
+    </table>
+    <p class="lead" style="margin-top:.6em;">どれも「コンピューターを操作できるAI」。<strong>触らせる範囲を決める</strong>のは同じです。</p>
+    <p class="src">2026年10月時点。機能や料金は変わります。</p>
+  </section>
+
+  <!-- おまけ3. AIエージェントの2つのジャンル -->
+  <section>
+    <h2 class="slide-title">おまけ③ AIエージェントの2つのジャンル</h2>
+    <p class="lead">おまけ②の表のツールは、AIエージェントの中でも主に2つのジャンルに分かれます。</p>
+    <table class="cmp" style="font-size:.62em;">
+      <thead><tr><th>カテゴリ</th><th>該当ツール</th><th>主な特徴・役割</th></tr></thead>
+      <tbody>
+        <tr><td>コーディングエージェント<br><span style="font-weight:400;color:#64748b;">(Coding / SWE Agent)</span></td><td style="white-space:nowrap;">Codex<br>Claude Code<br>OpenCode</td><td>プログラミングに特化。端末（CLI）やIDE、クラウド環境でコードの読み書き、デバッグ、Git操作、テスト実行を自律的にこなす。</td></tr>
+        <tr><td>汎用・パーソナルエージェント<br><span style="font-weight:400;color:#64748b;">(Autonomous / Personal Agent)</span></td><td style="white-space:nowrap;">dots<br>Hermes Agent</td><td>開発に限らず日常業務や秘書業務を担当。長期記憶（メモリ）を持ち、バックグラウンドでの常時稼働や外部アプリ連携（Slack等）を行う。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- おまけ4. プロンプトを工夫する -->
+  <section>
+    <h2 class="slide-title">おまけ④ プロンプト（お願い文）を工夫する</h2>
+    <p class="lead">AIは、<strong>やること・使うもの・守ること・確かめ方</strong>まで伝えると、うまく動きます。</p>
+    <div class="cards c2" style="align-items:stretch;grid-template-columns:.85fr 1.15fr;">
+      <div class="card" style="font-size:.85em;">
+        <ul class="check" style="margin-left:0;">
+          <li><strong>目的</strong>：何のために作るか</li>
+          <li><strong>材料</strong>：何を使うか（使わないもの）</li>
+          <li><strong>守ること</strong>：やってはいけないこと</li>
+          <li><strong>確かめ方</strong>：できたかをどう確認するか</li>
+          <li><strong>報告</strong>：終わったら何を教えてほしいか</li>
+        </ul>
+        <p style="margin-top:.5em;">大きなことは、<strong>まず計画を出してもらい、OKしてから作ってもらう</strong>。</p>
+      </div>
+      <div class="card" style="font-size:.62em;background:#0f172a;">
+        <p style="color:#94a3b8;font-size:.9em;margin-bottom:.3em;">例</p>
+        <p style="color:#e2e8f0;font-size:1em;line-height:1.65;">
+        index.html に、名前で検索できる機能を足して。<br>
+        <span style="color:#7dd3fc;">目的：</span>駅の近くのWi-Fiをすぐ見つけたい。<br>
+        <span style="color:#7dd3fc;">材料：</span>作業フォルダのCSVだけを使う。データにない情報は足さない。<br>
+        <span style="color:#7dd3fc;">守ること：</span>作業フォルダの外は触らない。ファイルを消す前は聞いて。<br>
+        <span style="color:#7dd3fc;">確かめ方：</span>「駅」で検索して、CSVと件数が合うか自分で確認して。<br>
+        <span style="color:#7dd3fc;">報告：</span>何を変えたか、3行で教えて。</p>
+      </div>
+    </div>
   </section>
 
 </div>

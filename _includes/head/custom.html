@@ -26,5 +26,52 @@
       h2.innerHTML = tocTitle.innerHTML;
       tocTitle.parentNode.replaceChild(h2, tocTitle);
     }
+
+    // 3) 本文中のリンクは別タブで開く（手順を見ながら作業できるように。ページ内リンクは除く）
+    document.querySelectorAll(".page__content a[href]").forEach(function (a) {
+      var href = a.getAttribute("href");
+      if (!href || href.charAt(0) === "#" || /^(mailto|tel|javascript):/i.test(href)) return;
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener noreferrer");
+    });
+
+    // 4) コードブロックに「コピー」ボタンを付与（ハンズオンで入力する文をそのまま貼れるように）
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+      return new Promise(function (resolve, reject) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        ok ? resolve() : reject();
+      });
+    }
+    document
+      .querySelectorAll(".page__content div.highlighter-rouge")
+      .forEach(function (block) {
+        var code = block.querySelector("pre code") || block.querySelector("pre");
+        if (!code) return;
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "copy-btn";
+        btn.textContent = "コピー";
+        btn.setAttribute("aria-label", "この内容をコピー");
+        btn.addEventListener("click", function () {
+          copyText(code.innerText.replace(/\n$/, "")).then(
+            function () { btn.textContent = "コピーしました"; btn.classList.add("is-done"); },
+            function () { btn.textContent = "コピーできませんでした"; }
+          );
+          setTimeout(function () { btn.textContent = "コピー"; btn.classList.remove("is-done"); }, 2000);
+        });
+        block.classList.add("has-copy");
+        block.appendChild(btn);
+      });
   });
 </script>

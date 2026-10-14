@@ -286,6 +286,27 @@ body {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
+/* コピーボタン（右上に固定。本文と重ならないよう上に余白） */
+.page__content div.highlighter-rouge.has-copy { position: relative; }
+.page__content div.highlighter-rouge.has-copy pre.highlight { padding-right: 6.5rem; }
+.page__content .copy-btn {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  padding: .3rem .8rem;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  font-family: var(--u-font);
+  font-size: .8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.page__content .copy-btn:hover,
+.page__content .copy-btn:focus-visible { background: rgba(255, 255, 255, .25); }
+.page__content .copy-btn.is-done { background: #16a34a; border-color: #16a34a; }
 
 /* ---------------- 目次（toc） ---------------- */
 .toc {

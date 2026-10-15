@@ -7,6 +7,9 @@ header:
   og_image: /assets/eyecatch-0.jpg
   teaser: /assets/eyecatch-0.jpg
 ---
+2026/10/15の開催の様子は[開催レポート]({{ "/report-0/" | relative_url }})にまとめています。
+{: .notice--info}
+
 対象：初参加・パソコンくわしくない人。毎回のはじめに開催。Windowsパソコン前提。
 事前準備なしでOKです。当日一緒に入れます。
 
